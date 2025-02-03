@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ced22b_cop4870_project1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ced22b_cop4870_project1.Models;
 
 namespace Library.eCommerce.Services
 {
