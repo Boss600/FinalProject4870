@@ -277,7 +277,7 @@ namespace MyApp
             Console.ReadLine();
         }
 
-        static void Checkout()
+        static void Checkout() 
         {
             Console.WriteLine(" =-=-=-=-=> C H E C K O U T <=-=-=-=-= ");
             var cart = ShoppingCartServiceProxy.Current.CartProducts;
