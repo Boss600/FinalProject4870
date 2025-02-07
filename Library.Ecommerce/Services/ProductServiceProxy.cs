@@ -48,12 +48,16 @@ namespace Library.eCommerce.Services
 
         public Product AddOrUpdate(Product product) 
         {
-            if (product.Id == 0)
+            var existingProduct = Products.FirstOrDefault(p => p?.Id == product.Id);
+            if (existingProduct != null)
+            {
+                existingProduct.Quantity = product.Quantity;
+            }
+            else
             {
                 product.Id = LastKey + 1;
                 Products.Add(product);
             }
-
             return product;
         }
 
@@ -68,6 +72,5 @@ namespace Library.eCommerce.Services
 
             return product;
         }
-
     }
 }

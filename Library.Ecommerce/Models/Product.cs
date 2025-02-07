@@ -11,12 +11,14 @@ namespace ced22b_cop4870_project1.Models
 
         public int Id { get; set; }
         public string? Name { get; set; }
+        public double? Price { get; set; }
+        public int Quantity { get; set; } = 1;
 
         public string? Display
         {
             get
             {
-                return $"{Id}. {Name}";
+                return $"{Id}. {Name}: {Price,4:C}     Quantity: {Quantity,1}";
             }
         }
 
@@ -26,7 +28,7 @@ namespace ced22b_cop4870_project1.Models
         }
 
         public override string ToString()
-        {
+        { 
             return Display ?? string.Empty;
         }
     }
