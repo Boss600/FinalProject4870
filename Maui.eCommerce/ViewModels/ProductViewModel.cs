@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ced22b_cop4870_project1.Models;
+using Library.eCommerce.Services;
 
 namespace Maui.eCommerce.ViewModels
 {
@@ -26,6 +27,11 @@ namespace Maui.eCommerce.ViewModels
         }
 
         public Product? Model { get; set; }
+
+        public void AddOrUpdate()
+        {
+            ProductServiceProxy.Current.AddOrUpdate(Model);
+        }
 
         public ProductViewModel() 
         {
