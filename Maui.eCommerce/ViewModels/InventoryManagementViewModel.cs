@@ -33,7 +33,7 @@ namespace Maui.eCommerce.ViewModels
         {
             NotifyPropertyChanged(nameof(Products));
         }
-        public ObservableCollection<Item?> Products
+        public ObservableCollection<Item?> Products    
         {
             get
             {
