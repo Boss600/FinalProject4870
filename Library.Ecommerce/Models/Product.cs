@@ -12,7 +12,7 @@ namespace ced22b_cop4870_project1.Models
 
         public int Id { get; set; }
         public string? Name { get; set; }
-        public double? Price { get; set; }
+        public decimal? Price { get; set; }
         public int Quantity { get; set; } = 1;
         
         public string? Display

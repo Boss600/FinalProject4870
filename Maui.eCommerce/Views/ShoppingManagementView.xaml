@@ -4,16 +4,21 @@
              x:Class="Maui.eCommerce.Views.ShoppingManagementView"
              Title="ShoppingManagementView">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/><!-- STORE & SHOPPING CART -->
+            <RowDefinition Height="Auto"/><!-- BUTTONS -->
+        </Grid.RowDefinitions>
+            
         <Grid.ColumnDefinitions>
             <ColumnDefinition/><!--STORE-->
             <ColumnDefinition/><!--USER SHOPPING CART-->
         </Grid.ColumnDefinitions>
 
         <!--STORE-->
-        <Grid Grid.Column="0">
+        <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ListView Grid.Row="0"
                 ItemsSource="{Binding Inventory}"
@@ -45,10 +50,10 @@
         </Grid>
         
         <!--USER SHOPPING CART-->
-        <Grid Grid.Column="1">
+        <Grid Grid.Row="0" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ListView Grid.Row="0"
                 ItemsSource="{Binding ShoppingCart}"
@@ -64,5 +69,28 @@
             </ListView>
             <Button Grid.Row="1" Text="-" Clicked="RemoveFromCartClicked"/>
         </Grid>
+        
+        <!-- BOTTOM BUTTON -->
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Text="Go Back"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Clicked="CancelClicked"/>
+
+            <Button Grid.Column="1"
+                    Text="Checkout"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Clicked="CheckoutClicked"/>
+        </Grid>
     </Grid>
 </ContentPage>
+    

@@ -14,6 +14,7 @@ namespace Library.eCommerce.Models
         public int Id { get; set; }
         public ProductDTO Product { get; set; }
         public int? Quantity { get; set; }
+        public decimal? Price { get; set; }
 
         public ICommand? AddCommand { get; set; }
 
@@ -47,6 +48,7 @@ namespace Library.eCommerce.Models
             Product = new ProductDTO(i.Product);
             Quantity = i.Quantity;
             Id = i.Id;
+            Price = i.Price;
 
             //AddCommand = new Command(DoAdd);
         }

@@ -19,4 +19,14 @@ public partial class ShoppingManagementView : ContentPage
     {
 		(BindingContext as ShoppingManagementViewModel).PurchaseItem();
     }
+
+    private void CancelClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
+    private void CheckoutClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//Checkout");
+    }
 }
