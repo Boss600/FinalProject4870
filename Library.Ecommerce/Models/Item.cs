@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ced22b_cop4870_project1.Models;
 using Library.eCommerce.DTO;
+using Library.eCommerce.Services;
 
 namespace Library.eCommerce.Models
 {
@@ -15,8 +16,6 @@ namespace Library.eCommerce.Models
         public ProductDTO Product { get; set; }
         public int? Quantity { get; set; }
         public decimal? Price { get; set; }
-
-        public ICommand? AddCommand { get; set; }
 
         public override string ToString()
         {
@@ -34,13 +33,6 @@ namespace Library.eCommerce.Models
         {
             Product = new ProductDTO();
             Quantity = 0;
-
-            AddCommand = null;
-        }
-
-        private void DoAdd()
-        {
-
         }
 
         public Item(Item i)
@@ -49,8 +41,6 @@ namespace Library.eCommerce.Models
             Quantity = i.Quantity;
             Id = i.Id;
             Price = i.Price;
-
-            //AddCommand = new Command(DoAdd);
         }
     }
 }
