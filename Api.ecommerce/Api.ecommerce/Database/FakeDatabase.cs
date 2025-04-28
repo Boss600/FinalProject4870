@@ -13,6 +13,8 @@ namespace Api.ecommerce.Database
             new Item { Product = new ProductDTO { Id = 3, Name = "Product 3", Price = 2.99m }, Id = 3, Quantity = 3 }
         };
 
+        private static List<Item?> cart = new List<Item?>();
+
         public static int LastKey_Item
         {
             get
@@ -33,9 +35,22 @@ namespace Api.ecommerce.Database
 
         }
 
+        public static List<Item?> Cart
+        {
+            get
+            {
+                return cart;
+            }
+        }
+
         public static IEnumerable<Item> Search(string? query)
         {
             return Inventory.Where(p => p?.Product?.Name?.ToLower().Contains(query?.ToLower() ?? string.Empty) ?? false);
+        }
+
+        public static void ClearCart()
+        {
+            Cart.Clear();
         }
     }
 }

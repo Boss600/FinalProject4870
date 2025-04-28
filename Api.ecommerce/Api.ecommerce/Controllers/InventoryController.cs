@@ -51,6 +51,5 @@ namespace Api.ecommerce.Controllers
         {
             return new InventoryEC().Get(query.Query);
         }
-
     }
 }

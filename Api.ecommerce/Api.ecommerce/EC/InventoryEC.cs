@@ -6,7 +6,6 @@ using Library.eCommerce.Services;
 
 namespace Api.ecommerce.EC
 {
-    
     public class InventoryEC
     {
         public List<Item?> Get()
